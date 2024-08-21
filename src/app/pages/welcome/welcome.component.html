@@ -1,0 +1,39 @@
+<nz-back-top></nz-back-top>
+<nz-row [nzGutter]="16">
+    <nz-col [nzSpan]="8">
+      <nz-card>
+        <nz-statistic
+          [nzValue]="(95.7)!"
+          [nzTitle]="'Active Clients'"
+          [nzPrefix]="prefixTplOne"
+          [nzSuffix]="'%'"
+          [nzValueStyle]="{ color: '#3F8600' }"
+        ></nz-statistic>
+        <ng-template #prefixTplOne><span nz-icon nzType="arrow-up"></span></ng-template>
+      </nz-card>
+    </nz-col>
+    <nz-col [nzSpan]="8">
+      <nz-card>
+        <nz-statistic
+          [nzValue]="(4.3)!"
+          [nzTitle]="'Inactive Clients'"
+          [nzPrefix]="prefixTplTwo"
+          [nzSuffix]="'%'"
+          [nzValueStyle]="{ color: '#CF1322' }"
+        ></nz-statistic>
+        <ng-template #prefixTplTwo><span nz-icon nzType="arrow-down"></span></ng-template>
+      </nz-card>
+    </nz-col>
+    <nz-col [nzSpan]="8">
+        <nz-card>
+          <nz-statistic
+            [nzValue]="(325)!"
+            [nzTitle]="'Total Clients'"
+            [nzPrefix]="prefixTplOne"
+            [nzValueStyle]="{ color: '#3F8600' }"
+          ></nz-statistic>
+          <ng-template #prefixTplTwo><span nz-icon nzType="arrow-down"></span></ng-template>
+        </nz-card>
+      </nz-col>
+  </nz-row>
+  
