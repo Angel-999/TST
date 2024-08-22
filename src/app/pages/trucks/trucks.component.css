@@ -2,3 +2,40 @@
     aspect-ratio: 1;
     object-fit: cover;
  }
+ .custom-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.custom-col {
+  flex: 1 0 20%; /* 20% width for 5 columns */
+  max-width: 20%;
+}
+
+@media (max-width: 1600px) {
+  .custom-col {
+    flex: 1 0 25%; /* 4 columns */
+    max-width: 25%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .custom-col {
+    flex: 1 0 33.33%; /* 3 columns */
+    max-width: 33.33%;
+  }
+}
+
+@media (max-width: 992px) {
+  .custom-col {
+    flex: 1 0 50%; /* 2 columns */
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-col {
+    flex: 1 0 100%; /* 1 column */
+    max-width: 100%;
+  }
+}

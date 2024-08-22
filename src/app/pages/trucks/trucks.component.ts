@@ -27,21 +27,21 @@ export class TrucksComponent implements OnInit {
     {
       id: 1,
       title: 'Truck 1',  
-      imageUrl: 'https://ik.imagekit.io/7lvwoay0t/TST-Icon',
+      imageUrl: 'https://ik.imagekit.io/7lvwoay0t/trucks/IMG_035',
       description: 'Plates of truck 1',
       status: 'Available'
     },
     {
       id: 2,
       title: 'Truck 2',  
-      imageUrl: 'https://ik.imagekit.io/7lvwoay0t/TST-Icon',
+      imageUrl: 'https://ik.imagekit.io/7lvwoay0t/trucks/IMG_039',
       description: 'Plates of truck 2',
       status: 'Available'
     },
     {
       id: 3,
       title: 'Truck 3',  
-      imageUrl: 'https://ik.imagekit.io/7lvwoay0t/TST-Icon',
+      imageUrl: 'https://ik.imagekit.io/7lvwoay0t/trucks/IMG_035',
       description: 'Plates of truck 3',
       status: 'Available'
     },

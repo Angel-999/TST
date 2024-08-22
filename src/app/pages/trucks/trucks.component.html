@@ -1,22 +1,15 @@
 <nz-back-top></nz-back-top>
 <nz-list nzGrid>
-    <div nz-row [nzGutter]="24">
-      @for (item of trucksList; track item) {
-        <div nz-col nzFlex>
-          <nz-list-item>
-            <nz-card style="width: 300px; border-radius: 10px; border: 0;" [nzCover]="coverTemplate">
-                <nz-card-meta [nzTitle]="'title'" [nzDescription]="'description'"></nz-card-meta>
-            </nz-card>
-          </nz-list-item>
-        </div>
-      }
+  <div nz-row class="custom-grid" [nzGutter]="16">
+    <div nz-col *ngFor="let item of trucksList" class="custom-col">
+      <nz-list-item>
+        <nz-card style="width: 100%; border-radius: 10px; border: 0;" [nzCover]="coverTemplate">
+          <nz-card-meta [nzTitle]="item.title" [nzDescription]="item.description"></nz-card-meta>
+        </nz-card>
+      </nz-list-item>
     </div>
-  </nz-list>
-<nz-list nzGrid>
-    <div nz-row nzGutter="16">
-
-    </div>
-  </nz-list>
+  </div>
+</nz-list>
   <ng-template #coverTemplate>
     <img alt="example" style="object-fit:cover; aspect-ratio: 16/9; border-radius: 10px;" [src]="'https://ik.imagekit.io/7lvwoay0t/TST-Icon'" />
 </ng-template>

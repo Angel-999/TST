@@ -3,47 +3,48 @@
     [nzTrigger]="null">
     <div class="sidebar-logo">
       <a routerLink="/home">
-        <img src="../../public/favicon.ico" alt="logo">
+        <img src="https://ik.imagekit.io/7lvwoay0t/favicon.ico" alt="logo">
         <h1>TST Board</h1>
       </a>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="Main" nzIcon="home">
+      <li nz-menu-item nzMatchRouter routerLink="/home">
+        <span nz-icon nzType="home"></span>
+        <span>Home</span>
+      </li>
+      <li nz-submenu nzTitle="Dispatching" nzIcon="user" nzOpen="true">
         <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/home">Home</a>
+          <li nz-menu-item nzMatchRouter routerLink="/clients">
+            <span nz-icon nzType="clients"></span>
+            <span>Clients</span>
+          </li>
+          <li nz-menu-item nzMatchRouter routerLink="/brokers">
+            <span nz-icon nzType="brokers"></span>
+            <span>Brokers</span>
+          </li>
+          <li nz-menu-item nzMatchRouter routerLink="/loads">
+            <span nz-icon nzType="loads"></span>
+            <span>Loads</span>
           </li>
         </ul>
       </li>
-      <li nz-submenu nzOpen nzTitle="Dispatching" nzIcon="usergroup-add">
+      <li nz-submenu nzTitle="Team" nzIcon="team" nzOpen="true">
         <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a>Clients</a>
+          <li nz-menu-item nzMatchRouter routerLink="/trucks">
+            <span nz-icon nzType="truck"></span>
+            <span>Trucks</span>
           </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Brokers</a>
+          <li nz-menu-item nzMatchRouter routerLink="/drivers">
+            <span nz-icon nzType="home"></span>
+            <span>Drivers</span>
           </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Loads</a>
+          <li nz-menu-item nzMatchRouter routerLink="/dispatchers">
+            <span nz-icon nzType="home"></span>
+            <span>Dispatcher</span>
           </li>
         </ul>
       </li>
-      <li nz-submenu nzOpen nzTitle="Company" nzIcon="apartment">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/trucks">Trucks</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Equipment</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Drivers</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Dispatchers</a>
-          </li>
-        </ul>
-      </li>
+
     </ul>
   </nz-sider>
   <nz-layout>
