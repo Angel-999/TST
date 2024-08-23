@@ -61,18 +61,74 @@ export class TrucksComponent implements OnInit {
     },
     {
       id: 5,
-      title: 'Truck 5',  
+      title: 'Truck 6',  
       imageUrl: 'https://ik.imagekit.io/7lvwoay0t/TST-Icon',
-      description: 'Plates of truck 5',
+      description: 'Plates of truck 6',
       status: 'Available'
     },
     {
       id: 5,
-      title: 'Truck 5',  
+      title: 'Truck 7',  
       imageUrl: 'https://ik.imagekit.io/7lvwoay0t/TST-Icon',
-      description: 'Plates of truck 5',
+      description: 'Plates of truck 7',
       status: 'Available'
     }
+    ,
+    {
+      id: 5,
+      title: 'Truck 7',  
+      imageUrl: 'https://ik.imagekit.io/7lvwoay0t/TST-Icon',
+      description: 'Plates of truck 7',
+      status: 'Available'
+    }
+    ,
+    {
+      id: 5,
+      title: 'Truck 7',  
+      imageUrl: 'https://ik.imagekit.io/7lvwoay0t/TST-Icon',
+      description: 'Plates of truck 7',
+      status: 'Available'
+    }
+    ,
+    {
+      id: 5,
+      title: 'Truck 7',  
+      imageUrl: 'https://ik.imagekit.io/7lvwoay0t/TST-Icon',
+      description: 'Plates of truck 7',
+      status: 'Available'
+    }
+    ,
+    {
+      id: 5,
+      title: 'Truck 7',  
+      imageUrl: 'https://ik.imagekit.io/7lvwoay0t/TST-Icon',
+      description: 'Plates of truck 7',
+      status: 'Available'
+    }
+    ,
+    {
+      id: 5,
+      title: 'Truck 7',  
+      imageUrl: 'https://ik.imagekit.io/7lvwoay0t/TST-Icon',
+      description: 'Plates of truck 7',
+      status: 'Available'
+    }
+    ,
+    {
+      id: 5,
+      title: 'Truck 7',  
+      imageUrl: 'https://ik.imagekit.io/7lvwoay0t/TST-Icon',
+      description: 'Plates of truck 7',
+      status: 'Available'
+    }
+    ,
+    {
+      id: 5,
+      title: 'Truck 7',  
+      imageUrl: 'https://ik.imagekit.io/7lvwoay0t/TST-Icon',
+      description: 'Plates of truck 7',
+      status: 'Available'
+    } 
   ]
 
 }

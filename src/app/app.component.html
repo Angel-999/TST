@@ -1,3 +1,4 @@
+@if (isLoggedIn) {
 <nz-layout class="app-layout">
   <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
     [nzTrigger]="null">
@@ -12,18 +13,18 @@
         <span nz-icon nzType="home"></span>
         <span>Home</span>
       </li>
-      <li nz-submenu nzTitle="Dispatching" nzIcon="user" nzOpen="true">
+      <li nz-submenu nzTitle="Dispatching" nzIcon="control" nzOpen="true">
         <ul>
           <li nz-menu-item nzMatchRouter routerLink="/clients">
-            <span nz-icon nzType="clients"></span>
+            <span nz-icon nzType="solution"></span>
             <span>Clients</span>
           </li>
           <li nz-menu-item nzMatchRouter routerLink="/brokers">
-            <span nz-icon nzType="brokers"></span>
+            <span nz-icon nzType="customer-service"></span>
             <span>Brokers</span>
           </li>
           <li nz-menu-item nzMatchRouter routerLink="/loads">
-            <span nz-icon nzType="loads"></span>
+            <span nz-icon nzType="dollar"></span>
             <span>Loads</span>
           </li>
         </ul>
@@ -35,11 +36,11 @@
             <span>Trucks</span>
           </li>
           <li nz-menu-item nzMatchRouter routerLink="/drivers">
-            <span nz-icon nzType="home"></span>
+            <span nz-icon nzType="car"></span>
             <span>Drivers</span>
           </li>
           <li nz-menu-item nzMatchRouter routerLink="/dispatchers">
-            <span nz-icon nzType="home"></span>
+            <span nz-icon nzType="user"></span>
             <span>Dispatcher</span>
           </li>
         </ul>
@@ -48,13 +49,21 @@
     </ul>
   </nz-sider>
   <nz-layout>
-    <nz-header>
-      <div class="app-header">
-        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-          <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
-        </span>
+<nz-layout>
+  <nz-header>
+    <div class="app-header">
+      <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+        <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
+      </span>
+      <div class="header-right-content">
+        <div>
+          <img src="https://cdn-icons-png.flaticon.com/512/219/219969.png" alt="Profile" class="profile-picture">
+        </div>
       </div>
-    </nz-header>
+    </div>
+  </nz-header>
+</nz-layout>
+    
     <nz-content>
       <div class="inner-content">
         <router-outlet></router-outlet>
@@ -62,3 +71,7 @@
     </nz-content>
   </nz-layout>
 </nz-layout>
+}
+@else {
+<app-login></app-login>
+}

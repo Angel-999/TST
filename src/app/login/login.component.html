@@ -1,0 +1,33 @@
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; width: 100vw;">
+  <div style="border-radius: 10px; padding: 20px; box-shadow: #3333336e 0px 0px 75px 10px;">
+    <h1>Log in</h1>
+    <form nz-form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Email!">
+          <nz-input-group nzPrefixIcon="user" [nzSuffix]="EmailSuffix">
+            <input type="text" nz-input formControlName="email" placeholder="Email" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Password!">
+          <nz-input-group nzPrefixIcon="lock" [nzSuffix]="PasswordSuffix">
+            <input [type]="passwordVisible ? 'text' : 'password'" nz-input formControlName="password" placeholder="Password"/>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <button nz-button class="login-form-button login-form-margin" nzType="primary" [disabled]="loginForm.invalid">Log in</button>
+    </form>
+  </div>
+</div>
+
+<ng-template #EmailSuffix>
+  <span nz-icon nz-tooltip nzTooltipTitle="The email you provided to TST" nzType="info-circle"></span>
+</ng-template>
+<ng-template #PasswordSuffix>
+  <span
+    nz-icon
+    [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+    (click)="passwordVisible = !passwordVisible"
+  ></span>
+</ng-template>

@@ -16,13 +16,6 @@
   box-shadow: 2px 0 6px rgba(0, 0, 0, 0.35);
 }
 
-.header-trigger {
-  height: 64px;
-  padding: 20px 24px;
-  font-size: 20px;
-  cursor: pointer;
-  transition: all .3s,padding 0s;
-}
 
 .trigger:hover {
   color: #1890ff;
@@ -61,11 +54,33 @@ nz-header {
 }
 
 .app-header {
-  position: relative;
-  height: 64px;
-  padding: 0;
-  box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px; /* Optional: adjust padding as needed */
 }
+
+.header-trigger {
+  height: 64px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all .3s,padding 0s;
+  display: flex;
+  align-items: center;
+}
+
+.header-right-content {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 
 .inner-content {
   padding: 16px;
