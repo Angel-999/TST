@@ -10,7 +10,8 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { LoginComponent } from "./login/login.component";
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
-
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { ImgAvatarComponent } from './img-avatar/img-avatar.component';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +28,9 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
     NzInputModule,
     NzButtonModule,
     NzDropDownModule,
-    LoginComponent
+    LoginComponent,
+    NzPopoverModule,
+    ImgAvatarComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

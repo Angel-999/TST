@@ -1,0 +1,7 @@
+<img [src]="imgSrc" nz-button nz-popover nzPopoverTrigger="click" [nzPopoverContent]="contentTemplate" nzPopoverPlacement="bottomRight">
+<ng-template #contentTemplate>
+    <button nz-button nzType="link" nzDanger (click)="logout()">
+        <span nz-icon nzType="frown"></span>
+        Log Out
+      </button>
+  </ng-template>

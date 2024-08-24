@@ -49,21 +49,14 @@
     </ul>
   </nz-sider>
   <nz-layout>
-<nz-layout>
-  <nz-header>
-    <div class="app-header">
-      <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-        <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
-      </span>
-      <div class="header-right-content">
-        <div>
-          <img src="https://cdn-icons-png.flaticon.com/512/219/219969.png" alt="Profile" class="profile-picture">
-        </div>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+          <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
+        </span>
+        <app-img-avatar imgSrc="https://cdn-icons-png.flaticon.com/512/219/219969.png"></app-img-avatar>
       </div>
-    </div>
-  </nz-header>
-</nz-layout>
-    
+    </nz-header>
     <nz-content>
       <div class="inner-content">
         <router-outlet></router-outlet>
