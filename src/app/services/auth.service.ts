@@ -6,8 +6,10 @@ import { AppwriteService } from './appwrite.service';
   providedIn: 'root'
 })
 export class AuthService {
-  private loggedIn = new BehaviorSubject<boolean>(false);
+  private loggedIn = new BehaviorSubject<boolean>(true);
   isLoggedIn$ = this.loggedIn.asObservable();
+  private hascheckLogInStatus = new BehaviorSubject<boolean>(false);
+  hascheckLogInStatus$ = this.hascheckLogInStatus.asObservable();
 
   constructor(private appwriteService: AppwriteService) {
     this.checkLoginStatus();
@@ -36,8 +38,10 @@ export class AuthService {
     try {
       const session = await this.appwriteService.account.get();
       this.loggedIn.next(true);
+      this.hascheckLogInStatus.next(true);
     } catch (error) {
       this.loggedIn.next(false);
+      this.hascheckLogInStatus.next(true);
     }
   }
 }

@@ -7,6 +7,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzBackTopModule } from 'ng-zorro-antd/back-top';
+import { AppwriteService } from '../../services/appwrite.service';
 
 @Component({
   selector: 'app-welcome',
@@ -26,9 +27,19 @@ import { NzBackTopModule } from 'ng-zorro-antd/back-top';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
+  totalClients = 0;
 
-  constructor() { }
+  constructor(private appwriteService: AppwriteService) { }
 
-  ngOnInit() { }
-
+  ngOnInit() { 
+    this.getDocuments();
+  }
+  async getDocuments() {
+    try {
+      const documents = await this.appwriteService.getDocuments('tst', '669cbcd30006ae923e3c');
+      console.log('Documents:', documents);
+    } catch (error) {
+      console.error('Error fetching documents:', error);
+    }
+  }
 }

@@ -1,7 +1,7 @@
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh; width: 100vw;">
-  <div style="border-radius: 10px; padding: 20px; border: 1px solid #161616;">
+  <div style="border-radius: 10px; padding: 25px; width: 325px; height: 450px; border: 1px solid var(--foreground-accent); background-color: var(--foreground); box-shadow: #00000080 0px 0px 20px;">
     <div style="display: flex; justify-content: center;">
-      <img src="https://ik.imagekit.io/7lvwoay0t/favicon.ico" style="width: 75px;">
+      <img src="https://ik.imagekit.io/7lvwoay0t/favicon.ico" style="width: 75px;" draggable="false">
     </div>
     <div  style="text-align: center;">
       <h2>Welcome back</h2>
@@ -9,21 +9,23 @@
     </div>
     <br>
     <form nz-form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <span>Email:</span>
       <nz-form-item>
         <nz-form-control nzErrorTip="Please input your Email!">
-          <nz-input-group nzPrefixIcon="user" [nzSuffix]="EmailSuffix">
-            <input type="text" nz-input formControlName="email" placeholder="Email" />
+          <nz-input-group nzPrefixIcon="user" [nzSuffix]="EmailSuffix" nzSize="large" class="nz-input-group">
+            <input type="text" nz-input formControlName="email" placeholder="Email"/>
           </nz-input-group>
         </nz-form-control>
       </nz-form-item>
+      <span>Password:</span>
       <nz-form-item>
         <nz-form-control nzErrorTip="Please input your Password!">
-          <nz-input-group nzPrefixIcon="lock" [nzSuffix]="PasswordSuffix">
+          <nz-input-group nzPrefixIcon="lock" [nzSuffix]="PasswordSuffix" nzSize="large" class="nz-input-group">
             <input [type]="passwordVisible ? 'text' : 'password'" nz-input formControlName="password" placeholder="Password"/>
           </nz-input-group>
         </nz-form-control>
       </nz-form-item>
-      <button nz-button class="login-form-button login-form-margin" nzType="primary" [disabled]="loginForm.invalid" nzBlock="">Log in</button>
+      <button nz-button class="login-form-button login-form-margin button" nzType="primary" [disabled]="loginForm.invalid" nzBlock>Log in</button>
       <div  style="text-align: right; margin-top: 10px;">
         <span>Don't have an account? <a routerLink="/register">Register</a></span>
       </div>

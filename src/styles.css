@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    color-scheme: dark;
+    --primary: #00e069;
+    --yellow: #ffa31a;
+    --red: #ff3c00;
+    --background: light-dark(#ffffff, #0f0f0f);
+    --foreground: light-dark(#F3F3F3, #181818);
+    --foreground-accent: light-dark(#dddddd, #242424);
+    --foreground-light: light-dark(#cfcfcf, #444444);
+    --text: light-dark(#000000, #ffffff);
+    --disabled-text: light-dark(#606060, #707070);
+    --button-text: light-dark(#000000, var(--primary));
+    --button-text-hover: light-dark(#ffffff, #ffffff);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.nz-input-group {
+    border-radius: 10px;
+}
+.button {
+    border-radius: 10px;
+}

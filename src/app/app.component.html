@@ -1,4 +1,12 @@
-@if (isLoggedIn) {
+@if(!hascheckLogInStatus){
+  <div class="example">
+    <nz-spin nzTip="Loading..."></nz-spin>
+  </div>
+}
+@else if (!isLoggedIn) {
+  <app-login></app-login>
+}
+@else if (isLoggedIn) {
 <nz-layout class="app-layout">
   <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
     [nzTrigger]="null">
@@ -64,7 +72,4 @@
     </nz-content>
   </nz-layout>
 </nz-layout>
-}
-@else {
-<app-login></app-login>
 }
