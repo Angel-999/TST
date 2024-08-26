@@ -54,7 +54,10 @@
         <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
           <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
         </span>
-        <app-img-avatar imgSrc="https://cdn-icons-png.flaticon.com/512/219/219969.png"></app-img-avatar>
+        <div>
+          <span style="margin-right: 10px;">{{username}}</span>
+          <app-img-avatar imgSrc="https://cdn-icons-png.flaticon.com/512/219/219969.png"></app-img-avatar>
+        </div>
       </div>
     </nz-header>
     <nz-content>

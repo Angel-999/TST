@@ -38,7 +38,7 @@ import { ImgAvatarComponent } from './img-avatar/img-avatar.component';
 export class AppComponent {
   isCollapsed = false;
   isLoggedIn = true;
-
+  username = "";
 
 
 
@@ -49,6 +49,9 @@ export class AppComponent {
   ngOnInit() {
     this.authService.isLoggedIn$.subscribe(status => {
       this.isLoggedIn = status;
+    });
+    this.authService.username$.subscribe(status => {
+      this.username = status;
     });
   }
 }
