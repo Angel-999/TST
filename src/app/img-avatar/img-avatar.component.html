@@ -1,7 +1,31 @@
-<img [src]="imgSrc" nz-button nz-popover nzPopoverTrigger="click" [nzPopoverContent]="contentTemplate" nzPopoverPlacement="bottomRight">
+
+<img src="{{avatarURL}}"
+nz-button
+nz-popover
+[nzPopoverVisible]="isPopoverVisible"
+(click)="togglePopover()"
+(nzPopoverVisibleChange)="onPopoverVisibleChange($event)"
+[nzPopoverContent]="contentTemplate"
+nzPopoverTrigger="click"
+nzPopoverPlacement="bottomRight">
 <ng-template #contentTemplate>
-    <button nz-button nzType="link" nzDanger (click)="logout()">
+    <div>
+        <img src="{{avatarURL}}" style="margin-right: 10px;">
+        <span>{{username}}</span>
+    </div>
+    <nz-divider style="margin-top: 10px; margin-bottom: 10px;"></nz-divider>
+    <button nz-button nzType="text" nzBlock disabled style="text-align: left;">
+        <span nz-icon nzType="translation"></span>
+        Language
+    </button>
+    <br>
+    <button nz-button nzType="text" nzBlock disabled style="text-align: left;">
+        <span nz-icon nzType="eye"></span>
+        Theme
+    </button>
+    <br>
+    <button nz-button nzDanger nzBlock="" (click)="logout()" style="text-align: left;">
         <span nz-icon nzType="frown"></span>
         Log Out
-      </button>
-  </ng-template>
+    </button>
+</ng-template>

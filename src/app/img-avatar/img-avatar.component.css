@@ -1,5 +1,23 @@
+:root {
+    color-scheme: dark;
+    --clr-skeleton-main: light-dark(#dddddd, #303030);
+    --clr-skeleton-secondary: light-dark(#cccccc, #404040);
+}
+
 img {
     border-radius: 50%;
-    background-color: white;
     height: 35px;
+    width: 35px;
+    background: linear-gradient(60deg, #505050, #505050, #303030, #505050, #505050);
+    background-size: 300% 300%;
+    animation: skeleton-loading 1.5s infinite linear;
+}
+@keyframes skeleton-loading {
+    0% {
+        background-position: -150% 50%;
+    }
+
+    100% {
+        background-position: 150% 50%;
+    }
 }

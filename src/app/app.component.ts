@@ -40,6 +40,7 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
 export class AppComponent {
   isCollapsed = false;
   isLoggedIn = true;
+  username = "";
   hascheckLogInStatus = false;
   constructor(private authService: AuthService) {}
   ngOnInit() {

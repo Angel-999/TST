@@ -12,6 +12,8 @@ export class AuthService {
   username$ = this.username.asObservable();
   private hascheckLogInStatus = new BehaviorSubject<boolean>(false);
   hascheckLogInStatus$ = this.hascheckLogInStatus.asObservable();
+  private AvatarURL = new BehaviorSubject<string>("");
+  AvatarURL$ = this.AvatarURL.asObservable();
 
   constructor(private appwriteService: AppwriteService) {
     this.checkLoginStatus();
@@ -19,8 +21,9 @@ export class AuthService {
 
   async login(email: string, password: string) {
     try {
-      await this.appwriteService.createSession(email, password);
+      await this.appwriteService.createSession(email, password)
       this.loggedIn.next(true);
+      this.checkLoginStatus();
     } catch (error) {
       this.loggedIn.next(false);
       console.error('Login failed:', error);
@@ -31,6 +34,7 @@ export class AuthService {
     try {
       await this.appwriteService.account.deleteSession('current');
       this.loggedIn.next(false);
+      this.checkLoginStatus();
     } catch (error) {
       console.error('Logout failed:', error);
     }
@@ -39,12 +43,15 @@ export class AuthService {
   async checkLoginStatus() {
     try {
       const session = await this.appwriteService.account.get();
-      this.username.next(session.name);
       this.loggedIn.next(true);
       this.hascheckLogInStatus.next(true);
+      this.username.next(session.name);
+      this.AvatarURL.next(await this.appwriteService.avatars.getInitials(session.name).href);
     } catch (error) {
       this.loggedIn.next(false);
       this.hascheckLogInStatus.next(true);
+      this.username.next("");
+      this.AvatarURL.next("");
     }
   }
 }
